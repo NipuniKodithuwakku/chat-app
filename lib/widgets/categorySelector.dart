@@ -12,7 +12,7 @@ class CategorySelectorState extends State<CategorySelector> {
   Widget build(context) {
     return Container(
       height: 90.0,
-      color: Colors.blue,
+      color: Theme.of(context).primaryColor,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
@@ -31,7 +31,7 @@ class CategorySelectorState extends State<CategorySelector> {
               child: Text(
                 categories[index],
                 style: TextStyle(
-                  color: Colors.white,
+                  color: index == selectedIndex ? Colors.white : Colors.white60,
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.5,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/categorySelector.dart';
 
 class HomeScreen extends StatefulWidget {
   createState() {
@@ -31,6 +32,9 @@ class HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
+      body: Column(children: <Widget>[
+        CategorySelector(),
+      ]),
     );
   }
 }

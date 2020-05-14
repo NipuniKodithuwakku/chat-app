@@ -1,3 +1,4 @@
+import 'package:chat_app/widgets/recent_chats.dart';
 import 'package:flutter/material.dart';
 import '../widgets/categorySelector.dart';
 import '../widgets/favourite_contacts.dart';
@@ -50,6 +51,7 @@ class HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: <Widget>[
                   FavouriteContacts(),
+                  RecentChats(),
                 ],
               ),
             ),

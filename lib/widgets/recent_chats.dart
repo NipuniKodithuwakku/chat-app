@@ -25,7 +25,12 @@ class RecentChats extends StatelessWidget {
                   padding:
                       EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
                   decoration: BoxDecoration(
-                    color: Color(0xFFFFEFEE),
+                    color:
+                        chats[index].unread ? Color(0xFFFFEFEE) : Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20.0),
+                      bottomRight: Radius.circular(20.0),
+                    ),
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

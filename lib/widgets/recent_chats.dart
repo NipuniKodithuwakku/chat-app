@@ -16,19 +16,49 @@ class RecentChats extends StatelessWidget {
             itemCount: chats.length,
             itemBuilder: (context, index) {
               return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  CircleAvatar(
-                    radius: 35.0,
-                    backgroundImage: AssetImage(chats[index].sender.imageUrl),
+                  Row(
+                    children: <Widget>[
+                      CircleAvatar(
+                        radius: 35.0,
+                        backgroundImage:
+                            AssetImage(chats[index].sender.imageUrl),
+                      ),
+                      SizedBox(width: 10.0),
+                      Column(
+                        //new
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            chats[index].sender.name,
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(height: 5.0),
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.45,
+                            child: Text(
+                              chats[index].text,
+                              style: TextStyle(
+                                color: Colors.blueGrey,
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w600,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                   Column(
                     children: <Widget>[
-                      Text(
-                        chats[index].sender.name,
-                      ),
-                      Text(
-                        chats[index].text,
-                      ),
+                      Text(chats[index].time),
+                      Text('NEW'),
                     ],
                   ),
                 ],

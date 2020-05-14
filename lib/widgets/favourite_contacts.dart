@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../models/message_model.dart';
 
 class FavouriteContacts extends StatelessWidget {
   Widget build(context) {
@@ -30,8 +31,30 @@ class FavouriteContacts extends StatelessWidget {
         ),
         Container(
           height: 120.0,
-          color: Colors.blue,
-          child: ListView.builder(itemBuilder: null),
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(left: 10.0),
+            itemBuilder: (context, index) {
+              return Column(children: <Widget>[
+                CircleAvatar(
+                  radius: 35.0,
+                  backgroundImage: AssetImage(favorites[index].imageUrl),
+                ),
+                SizedBox(
+                  height: 6.0,
+                ),
+                Text(
+                  favorites[index].name,
+                  style: TextStyle(
+                    color: Colors.blueGrey,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ]);
+            },
+            itemCount: favorites.length,
+          ),
         )
       ],
     );

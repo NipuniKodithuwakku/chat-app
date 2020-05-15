@@ -14,18 +14,21 @@ class ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
-        leading: CircleAvatar(
-          radius: 8.0,
-          backgroundImage: AssetImage(widget.user.imageUrl),
-        ),
-        title: Text(
-          widget.user.name,
-          style: TextStyle(
-            fontSize: 23.0,
-            fontWeight: FontWeight.w400,
+        title: Padding(
+          padding: EdgeInsets.only(left: 0.0),
+          child: Row(
+            children: <Widget>[
+              CircleAvatar(
+                radius: 20.0,
+                backgroundImage: AssetImage(widget.user.imageUrl),
+              ),
+              SizedBox(width: 5.0),
+              Text(
+                widget.user.name,
+              ),
+            ],
           ),
         ),
-        elevation: 0.0,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.more_vert),

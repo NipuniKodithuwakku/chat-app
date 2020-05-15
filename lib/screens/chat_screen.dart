@@ -13,7 +13,7 @@ class ChatScreen extends StatefulWidget {
 class ChatScreenState extends State<ChatScreen> {
   Widget build(context) {
     return Scaffold(
-        backgroundColor: Theme.of(context).primaryColor,
+        // backgroundColor: Theme.of(context).primaryColor,
         appBar: AppBar(
           title: Padding(
             padding: EdgeInsets.only(left: 0.0),
@@ -48,11 +48,18 @@ class ChatScreenState extends State<ChatScreen> {
                     topRight: Radius.circular(30.0),
                   ),
                 ),
-                child: ListView.builder(
-                    itemCount: chats.length,
-                    itemBuilder: (context, index) {
-                      return Text(chats[index].text);
-                    }),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30.0),
+                    topRight: Radius.circular(30.0),
+                  ),
+                  child: ListView.builder(
+                      padding: EdgeInsets.only(top: 10.0),
+                      itemCount: chats.length,
+                      itemBuilder: (context, index) {
+                        return Text(chats[index].text);
+                      }),
+                ),
               ),
             )
           ],

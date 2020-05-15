@@ -84,3 +84,57 @@ List<Message> chats = [
     unread: true,
   )
 ];
+
+//example message in the chat screen
+
+List<Message> messages = [
+  Message(
+    sender: nipuni,
+    time: '5.30 PM',
+    text: 'hey how it\'s going? what did you do?',
+    isLiked: true,
+    unread: true,
+  ),
+  Message(
+    sender: currentUser,
+    time: '5.30 PM',
+    text: "just walked with my dog.Don't you know I have brought a new dog",
+    isLiked: false,
+    unread: true,
+  ),
+  Message(
+    sender: nipuni,
+    time: '5.30 PM',
+    text: "How is the dog ? is it really interesting?",
+    isLiked: false,
+    unread: true,
+  ),
+  Message(
+    sender: currentUser,
+    time: '5.30 PM',
+    text: "Why not,It is so playfull.It plays with a ball also",
+    isLiked: false,
+    unread: true,
+  ),
+  Message(
+    sender: nipuni,
+    time: '5.30 PM',
+    text: "what kind of food does it eat?",
+    isLiked: false,
+    unread: true,
+  ),
+  Message(
+    sender: currentUser,
+    time: '5.30 PM',
+    text: "it eats rice ,meat and also milk",
+    isLiked: false,
+    unread: true,
+  ),
+  Message(
+    sender: nipuni,
+    time: '5.30 PM',
+    text: "nice,it's awesome",
+    isLiked: false,
+    unread: true,
+  ),
+];

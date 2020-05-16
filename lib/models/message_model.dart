@@ -31,7 +31,7 @@ final User sachini = User(
 );
 final User subani = User(
   id: 3,
-  name: 'Saubani',
+  name: 'Subani',
   imageUrl: 'images/subani.jpg',
 );
 final User dilmi = User(

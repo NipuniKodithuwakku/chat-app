@@ -89,10 +89,20 @@ class ChatScreenState extends State<ChatScreen> {
       child: Row(
         children: <Widget>[
           IconButton(
-            icon: Icon(Icons.attach_file),
+            icon: Icon(Icons.camera_alt),
             iconSize: 25.0,
             color: Theme.of(context).primaryColor,
             onPressed: () {},
+          ),
+          Expanded(
+            child: TextField(
+              //capitalize first letter of the sentence
+              textCapitalization: TextCapitalization.sentences,
+              onChanged: (value) {},
+              decoration: InputDecoration.collapsed(
+                hintText: 'Type a message',
+              ),
+            ),
           ),
           IconButton(
             icon: Icon(Icons.send),
@@ -107,31 +117,33 @@ class ChatScreenState extends State<ChatScreen> {
 
   Widget build(context) {
     return Scaffold(
-        // backgroundColor: Theme.of(context).primaryColor,
-        appBar: AppBar(
-          title: Padding(
-            padding: EdgeInsets.only(left: 0.0),
-            child: Row(
-              children: <Widget>[
-                CircleAvatar(
-                  radius: 20.0,
-                  backgroundImage: AssetImage(widget.user.imageUrl),
-                ),
-                SizedBox(width: 5.0),
-                Text(
-                  widget.user.name,
-                ),
-              ],
-            ),
+      // backgroundColor: Theme.of(context).primaryColor,
+      appBar: AppBar(
+        title: Padding(
+          padding: EdgeInsets.only(left: 0.0),
+          child: Row(
+            children: <Widget>[
+              CircleAvatar(
+                radius: 20.0,
+                backgroundImage: AssetImage(widget.user.imageUrl),
+              ),
+              SizedBox(width: 5.0),
+              Text(
+                widget.user.name,
+              ),
+            ],
           ),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.more_vert),
-              onPressed: () {},
-            ),
-          ],
         ),
-        body: Column(
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.more_vert),
+            onPressed: () {},
+          ),
+        ],
+      ),
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Column(
           children: <Widget>[
             Expanded(
               child: Container(
@@ -164,6 +176,8 @@ class ChatScreenState extends State<ChatScreen> {
             ),
             _buildMessageComposer(),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
